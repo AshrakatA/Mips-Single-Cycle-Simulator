@@ -692,7 +692,7 @@ public class MipsDatapath extends javax.swing.JFrame {
         reg.empty();
         reg.writedata(28, 268468224);
         reg.writedata(29, 2147479548);
-        DMem.empty();
+        DMem.DM.clear();
         for (int i = 0; i < 100; i++) {
             Memorytable.setValueAt(null, i, 0);
             Memorytable.setValueAt(null, i, 1);
@@ -806,9 +806,9 @@ public class MipsDatapath extends javax.swing.JFrame {
                         + rsI.getSelectedItem().toString() + ")" + "\n";
                 Instructions.append(temp);
             } else if (Iinstruction.getSelectedItem().toString().equals("lui")) {
-                String temp = (count) + "  " + Iinstruction.getSelectedItem().toString() + "  " + rtI.getSelectedItem().toString() +  ", " + imm.getText() + "\n";
+                String temp = (count) + "  " + Iinstruction.getSelectedItem().toString() + "  " + rtI.getSelectedItem().toString() + ", " + imm.getText() + "\n";
                 Instructions.append(temp);
-            
+
             } else {
                 String temp = (count) + "  " + Iinstruction.getSelectedItem().toString() + "  " + rtI.getSelectedItem().toString() + ", " + rsI.getSelectedItem().toString() + ", " + imm.getText() + "\n";
                 Instructions.append(temp);
@@ -1036,7 +1036,7 @@ public class MipsDatapath extends javax.swing.JFrame {
                     reg.writedata(muxRout, muxDout);
                     if (muxRout == 0) {
                         JOptionPane.showMessageDialog(this, "Cannot set data in register $0");
-                        
+
                     }
                 }//write data = the decimal value of the output of mux of data memory in register with index = the decimal value of the output of the mux of registers 
 /////////////////////////////////////////////////////////////////////////////////////////////////

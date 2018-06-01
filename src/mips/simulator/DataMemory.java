@@ -27,10 +27,7 @@ public class DataMemory {
         return 0;
     }
 
-    public void empty() {
-        for (int i = 0; i < DM.size(); i++) {
-            DM.clear();
-        }
 
-    }
+
+    
 }
